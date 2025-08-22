@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Wishlist</title>
+</head>
+<body>
+  <h2>My Wishlist</h2>
+  <input type="text" id="productName" placeholder="Product name">
+  <button id="addBtn">Add to Wishlist</button>
+  <ul id="wishlist"></ul>
+
+  <script>
+    const addBtn = document.getElementById('addBtn');
+    const wishlist = document.getElementById('wishlist');
+    addBtn.onclick = function() {
+      const productName = document.getElementById('productName').value;
+      if (productName.trim() !== '') {
+        const li = document.createElement('li');
+        li.textContent = productName;
+        wishlist.appendChild(li);
+        document.getElementById('productName').value = '';
+      }
+    };
+  </script>
+</body>
+</html>
